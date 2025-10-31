@@ -10,6 +10,26 @@ const Header: React.FC = () => {
     const [showMobileMenu, setShowMobileMenu] = React.useState(false);
     const router = useRouter();
 
+    const HEADER_OFFSET = 80; // подгони под свою высоту хедера
+
+const scrollToLaunch = () => {
+  if (typeof window === "undefined") return;
+  const el = document.getElementById("launch");
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
+
+const handleMobileSubscribe = () => {
+    setShowMobileMenu(false);
+    // если есть CSS-анимация закрытия, подожди её (подгони таймер)
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        scrollToLaunch();
+      }, 300);
+    });
+  };
+  
 
     return (
        <header className="header">
@@ -39,7 +59,7 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
              </nav>
-             <button className="header_button">
+             <button className="header_button" type="button" onClick={scrollToLaunch} >
                 Подписаться на запуск
              </button>
 
@@ -76,7 +96,7 @@ const Header: React.FC = () => {
                         </li>
                     </ul>
                 </nav>
-                <button className="mobile_menu_button_subscribe">
+                <button className="mobile_menu_button_subscribe" type='button'  onClick={handleMobileSubscribe} >
                     Подписаться на запуск
                 </button>
                 </div>

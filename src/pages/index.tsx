@@ -137,11 +137,91 @@ const Home: React.FC = () => {
     const [selectedHowId, setSelectedHowId] = React.useState<number>(1);
     const selectedHow = howItWorks.find((step) => step.id === selectedHowId);
 
+    // Смещение под фиксированный header (поменяй под свою высоту)
+const HEADER_OFFSET = 80;
+
+const scrollToLaunch = React.useCallback(() => {
+  const el = document.getElementById("launch");
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}, []);
+
+React.useEffect(() => {
+  // Ловим клики по всем ссылкам/кнопкам, отмеченным как "вести к launch"
+  const onClick = (e: Event) => {
+    e.preventDefault();
+    scrollToLaunch();
+  };
+
+  // 1) <a href="#launch">
+  const anchorLinks = Array.from(document.querySelectorAll('a[href="#launch"]'));
+
+  // 2) <button data-scroll="launch"> (удобно для Header/Footer, если там кнопка)
+  const dataButtons = Array.from(document.querySelectorAll('button[data-scroll="launch"], [data-scroll="launch"]'));
+
+  const targets = [...anchorLinks, ...dataButtons];
+
+  targets.forEach((node) => node.addEventListener("click", onClick));
+
+  return () => targets.forEach((node) => node.removeEventListener("click", onClick));
+}, [scrollToLaunch]);
+
+// высота фикс-хедера, если не нужен оффсет — поставь 0
+
+
+// наблюдаем появление секции launch
+const [showScrollTop, setShowScrollTop] = React.useState(false);
+
+React.useEffect(() => {
+  const target = document.getElementById("launch");
+  if (!target) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      // показываем кнопку, если launch виден хотя бы на 20%
+      setShowScrollTop(entry.isIntersecting);
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(target);
+  return () => observer.disconnect();
+}, []);
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+// (если нужно ещё и скролл к launch с оффсетом где-то в коде)
+// const scrollToLaunch = () => {
+//   const el = document.getElementById("launch");
+//   if (!el) return;
+//   const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+//   window.scrollTo({ top: y, behavior: "smooth" });
+// };
+
+
 
     return (
         <>
             <Header />
             <main className="main_page">
+            {showScrollTop && (
+                    <button
+                        type="button"
+                        className="scroll_top_btn"
+                        aria-label="Прокрутить вверх"
+                        onClick={scrollToTop}
+                    >
+                        {/* Иконка стрелки вверх (можешь заменить своей) */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 5a1 1 0 0 1 .707.293l6 6a1 1 0 1 1-1.414 1.414L13 8.414V19a1 1 0 1 1-2 0V8.414l-4.293 4.293A1 1 0 0 1 5.293 11.3l6-6A1 1 0 0 1 12 5Z"/>
+                        </svg>
+                    </button>
+            )}
+
 
                 <section className="top">
                     <div className="top_wrapper">   
@@ -158,7 +238,7 @@ const Home: React.FC = () => {
                                 <p className="top_wrapper_item_description2">
                                     Мы объединяем Технологии И Эстетику, Делая Интерьер-Дизайн Доступным Каждому.
                                 </p>
-                                <button className="top_wrapper_item_button">
+                                <button className="top_wrapper_item_button" type="button" data-scroll="launch">
                                     Подписаться на запуск
                                 </button>
 
@@ -187,7 +267,7 @@ const Home: React.FC = () => {
                             <div
                                 className={`designers_forum_card ${selectedForumId === card.id ? 'active' : ''}`}
                                 key={card.id}
-                                onClick={() => setSelectedForumId(card.id)}
+                                // onClick={() => setSelectedForumId(card.id)}
                                 role="button"
                                 tabIndex={0}
                                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedForumId(card.id); }}
@@ -311,7 +391,7 @@ const Home: React.FC = () => {
                     </div>
                 </section>
                 
-                <section className="launch">
+                <section className="launch" id="launch">
                     <div className="launch_wrapper">
                         <div className="launch_item_content">
                             <div className="launch_item_content_wrapper">

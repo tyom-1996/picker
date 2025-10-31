@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                 <a href="/" className="footer_logo">
                     <img src="/images/footer_logo.png" alt="logo" />
                 </a>
-                <button className="mobile_footer_button">
+                <button className="mobile_footer_button" type="button" data-scroll="launch">
                     Подписаться на запуск
                 </button>
                 <nav className="footer_menu">
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                         </li>
                     </ul>
                 </nav>
-                <button className="footer_button">
+                <button className="footer_button" type='button' data-scroll="launch">
                     Подписаться на запуск
                 </button>
             </div>

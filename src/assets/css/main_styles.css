@@ -13,6 +13,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 
 /*top*/
 
@@ -186,13 +190,15 @@
 
 .designers_forum_card:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 133, 224, 0.15);
+    border-color: rgba(72, 133, 224, 1);
 }
 
-.designers_forum_card.active {
+/* .designers_forum_card.active {
     border-color: rgba(72, 133, 224, 1);
     box-shadow: 0 6px 20px rgba(72, 133, 224, 0.15);
     background: #f9fbff;
-}
+} */
 
 .designers_forum_card_title {
     font-family: "Montserrat", sans-serif;
@@ -973,7 +979,7 @@
         height: unset!important;
     }
     .top_wrapper_item_parent {
-        padding: 50px 40px!important;
+        padding: 50px 40px 0 40px!important;
     }
 }
 
@@ -1196,7 +1202,7 @@
         height: unset!important;
     }
     .top_wrapper_item_parent {
-        padding: 40px 30px!important;
+        padding: 40px 30px 0 30px!important;
     }
 }
 
@@ -1412,7 +1418,7 @@
         height: unset!important;
     }
     .top_wrapper_item_parent {
-        padding: 38px 24px!important;
+        padding: 38px 24px 0 24px!important;
     }
 }
 
@@ -1464,3 +1470,41 @@
         height: 580px!important;
     }
 }
+
+html {
+    scroll-behavior: smooth; /* приятная плавность везде */
+  }
+  
+  .scroll_top_btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1100;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 999px;
+    background: #0a0a0a;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+    opacity: 0.98;
+  }
+  
+  .scroll_top_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+  }
+  
+  @media (max-width: 768px) {
+    .scroll_top_btn {
+      right: 14px;
+      bottom: 14px;
+      width: 44px;
+      height: 44px;
+    }
+  }
+  
