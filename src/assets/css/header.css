@@ -48,15 +48,21 @@
 }
 .header_menu_item {
     list-style: none;
+    cursor: pointer;
 }
 .header_menu_link {
     text-decoration: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: rgba(51, 51, 51, 1);
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 18px;
+    border: none;
+    outline: none;
+    background: none;
     
 }
 

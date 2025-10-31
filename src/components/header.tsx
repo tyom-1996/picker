@@ -12,24 +12,22 @@ const Header: React.FC = () => {
 
     const HEADER_OFFSET = 80; // подгони под свою высоту хедера
 
-const scrollToLaunch = () => {
-  if (typeof window === "undefined") return;
-  const el = document.getElementById("launch");
-  if (!el) return;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
-  window.scrollTo({ top: y, behavior: "smooth" });
-};
-
-const handleMobileSubscribe = () => {
-    setShowMobileMenu(false);
-    // если есть CSS-анимация закрытия, подожди её (подгони таймер)
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        scrollToLaunch();
-      }, 300);
-    });
-  };
-  
+    const scrollToId = (id: string) => {
+        if (typeof window === "undefined") return;
+        const el = document.getElementById(id);
+        if (!el) return;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      };
+    
+      const handleMobileScroll = (id: string) => {
+        setShowMobileMenu(false);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            scrollToId(id);
+          }, 300);
+        });
+      };
 
     return (
        <header className="header">
@@ -43,23 +41,23 @@ const handleMobileSubscribe = () => {
              <nav className="header_menu">
                 <ul className="header_menu_list">
                     <li className="header_menu_item">
-                        <a href="/" className="header_menu_link">О проекте</a>
+                    <button onClick={() => scrollToId("designers_forum")} className="header_menu_link">О проекте</button>
                     </li>
                     <li className="header_menu_item">
-                        <a href="/" className="header_menu_link">Как это работает</a>
+                    <button onClick={() => scrollToId("how_it_works")} className="header_menu_link">Как это работает</button>
                     </li>
                     <li className="header_menu_item">
-                        <a href="/" className="header_menu_link">Приложение</a>
+                    <button onClick={() => scrollToId("mobile_application")} className="header_menu_link">Приложение</button>
                     </li>
                     <li className="header_menu_item">
-                        <a href="/" className="header_menu_link">Сайт</a>
+                    <button onClick={() => scrollToId("website")} className="header_menu_link">Сайт</button>
                     </li>
                     <li className="header_menu_item">
-                        <a href="/" className="header_menu_link">Контакты</a>
+                    <button onClick={() => scrollToId("faq")} className="header_menu_link">Контакты</button>
                     </li>
                 </ul>
-             </nav>
-             <button className="header_button" type="button" onClick={scrollToLaunch} >
+        </nav>
+             <button className="header_button" type="button"  onClick={() => scrollToId("launch")}>
                 Подписаться на запуск
              </button>
 
@@ -78,25 +76,25 @@ const handleMobileSubscribe = () => {
                 </div>
                 <div className="mobile_menu_content">
                 <nav className="mobile_menu_menu">
-                    <ul className="mobile_menu_menu_list">
-                        <li className="mobile_menu_menu_item">
-                            <a href="/" className="header_menu_link">О проекте</a>
-                        </li>
-                        <li className="mobile_menu_menu_item">
-                            <a href="/" className="header_menu_link">Как это работает</a>
-                        </li>
-                        <li className="mobile_menu_menu_item">
-                            <a href="/" className="header_menu_link">Приложение</a>
-                        </li>
-                        <li className="mobile_menu_menu_item">
-                            <a href="/" className="header_menu_link">Сайт</a>
-                        </li>
-                        <li className="mobile_menu_menu_item">
-                            <a href="/" className="header_menu_link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <button className="mobile_menu_button_subscribe" type='button'  onClick={handleMobileSubscribe} >
+                <ul className="mobile_menu_menu_list">
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("designers_forum")} className="header_menu_link">О проекте</button>
+                  </li>
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("how_it_works")} className="header_menu_link">Как это работает</button>
+                  </li>
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("mobile_application")} className="header_menu_link">Приложение</button>
+                  </li>
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("website")} className="header_menu_link">Сайт</button>
+                  </li>
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("faq")} className="header_menu_link">Контакты</button>
+                  </li>
+                </ul>
+              </nav>
+                <button className="mobile_menu_button_subscribe" type='button'   onClick={() => handleMobileScroll("launch")}>
                     Подписаться на запуск
                 </button>
                 </div>

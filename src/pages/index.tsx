@@ -223,7 +223,7 @@ const scrollToTop = () => {
             )}
 
 
-                <section className="top">
+                <section className="top" id="top">
                     <div className="top_wrapper">   
                         <div className="top_wrapper_item_parent">
                             <div className="top_wrapper_item">
@@ -253,7 +253,7 @@ const scrollToTop = () => {
                         </div>
                     </div>
                 </section>
-                <section className="designers_forum">
+                <section className="designers_forum" id="designers_forum">
                     <div className="designers_forum_wrapper">
                         <h2 className="designers_forum_title">Форум Дизайнеров</h2>
                         <h3 className="designers_forum_subtitle">Место, Где Рождаются Идеи И Решения.</h3>
@@ -279,7 +279,7 @@ const scrollToTop = () => {
                         </div>
                     </div>
                 </section>
-                <section className="how_it_works">
+                <section className="how_it_works" id="how_it_works">
                     <div className="how_it_works_wrapper">
                         <h2 className="how_it_works_title">Как Это Работает</h2>
                         <h3 className="how_it_works_subtitle">Создай Интерьер Шаг За Шагом — Просто И Вдохновляюще</h3>
@@ -303,7 +303,7 @@ const scrollToTop = () => {
             
                     </div>
                 </section>
-                <section className="mobile_application">
+                <section className="mobile_application" id="mobile_application">
                     <div className="mobile_application_wrapper">
                         <div className="mobile_application_item_image">
                             <img src="/images/mobile_application_img.png" alt="mobile_application_image" />
@@ -334,7 +334,7 @@ const scrollToTop = () => {
                     
                     </div>
                 </section>
-                <section className="website">
+                <section className="website" id="website">
                     <div className="website_wrapper">
                    
                        <div className="website_item">
@@ -366,7 +366,7 @@ const scrollToTop = () => {
                     
                     </div>
                 </section>
-                <section className="faq">
+                <section className="faq" id="faq">
                     <div className="faq_wrapper">
                         <h1 className="faq_title">
                             Часто Задаваемые Вопросы
