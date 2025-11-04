@@ -53,7 +53,10 @@ const Header: React.FC = () => {
                     <button onClick={() => scrollToId("website")} className="header_menu_link">Сайт</button>
                     </li>
                     <li className="header_menu_item">
-                    <button onClick={() => scrollToId("faq")} className="header_menu_link">Контакты</button>
+                      <button onClick={() => scrollToId("faq")} className="header_menu_link">Заказать комплектацию</button>
+                    </li>
+                    <li className="header_menu_item">
+                    <button onClick={() => scrollToId("launch")} className="header_menu_link">Контакты</button>
                     </li>
                 </ul>
         </nav>
@@ -78,19 +81,22 @@ const Header: React.FC = () => {
                 <nav className="mobile_menu_menu">
                 <ul className="mobile_menu_menu_list">
                   <li className="mobile_menu_menu_item">
-                    <button onClick={() => handleMobileScroll("designers_forum")} className="header_menu_link">О проекте</button>
+                    <button onClick={() => handleMobileScroll("designers_forum")} className="mobile_header_menu_link">О проекте</button>
                   </li>
                   <li className="mobile_menu_menu_item">
-                    <button onClick={() => handleMobileScroll("how_it_works")} className="header_menu_link">Как это работает</button>
+                    <button onClick={() => handleMobileScroll("how_it_works")} className="mobile_header_menu_link">Как это работает</button>
                   </li>
                   <li className="mobile_menu_menu_item">
-                    <button onClick={() => handleMobileScroll("mobile_application")} className="header_menu_link">Приложение</button>
+                    <button onClick={() => handleMobileScroll("mobile_application")} className="mobile_header_menu_link">Приложение</button>
                   </li>
                   <li className="mobile_menu_menu_item">
-                    <button onClick={() => handleMobileScroll("website")} className="header_menu_link">Сайт</button>
+                    <button onClick={() => handleMobileScroll("website")} className="mobile_header_menu_link">Сайт</button>
                   </li>
                   <li className="mobile_menu_menu_item">
-                    <button onClick={() => handleMobileScroll("faq")} className="header_menu_link">Контакты</button>
+                    <button onClick={() => handleMobileScroll("faq")} className="mobile_header_menu_link">Заказать комплектацию</button>
+                  </li>
+                  <li className="mobile_menu_menu_item">
+                    <button onClick={() => handleMobileScroll("launch")} className="mobile_header_menu_link">Контакты</button>
                   </li>
                 </ul>
               </nav>
