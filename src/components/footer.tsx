@@ -24,9 +24,14 @@ const Footer: React.FC = () => {
                 <a href="/" className="footer_logo">
                     <img src="/images/footer_logo.png" alt="logo" />
                 </a>
-                <button className="mobile_footer_button" type="button" onClick={() => scrollToId("launch")}>
+                <a
+                    className="mobile_footer_button"
+                    href="https://t.me/material_ka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Подписаться на запуск
-                </button>
+                </a>
                 <nav className="footer_menu">
                     <ul className="footer_menu_list">
                         <li className="footer_menu_item">
@@ -46,24 +51,28 @@ const Footer: React.FC = () => {
                         </li>
                     </ul>
                 </nav>
-                <button className="footer_button" type='button' onClick={() => scrollToId("launch")}>
+                <a
+                    className="footer_button"
+                    href="https://t.me/material_ka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Подписаться на запуск
-                </button>
+                </a>
             </div>
             <div className="footer_wrapper_item2">
                <p className="footer_wrapper_item2_text">
                     © 2025 Комплектатор
                </p>
-               <div className="footer_wrapper_item2_links">
+               {/* <div className="footer_wrapper_item2_links">
                     <a href="/" className="footer_wrapper_item2_link">
                         Условия использования
                     </a>
                     <a href="/" className="footer_wrapper_item2_link">
                         Политика конфиденциальности
                     </a>
-               </div>
+               </div> */}
             </div>
-           
 
           </div>
 

@@ -245,9 +245,15 @@ const scrollToTop = () => {
                                 <p className="top_wrapper_item_description2">
                                     Мы объединяем Технологии И Эстетику, Делая Интерьер-Дизайн Доступным Каждому.
                                 </p>
-                                <button className="top_wrapper_item_button" type="button" data-scroll="launch">
+                                <a
+                                    className="top_wrapper_item_button"
+                                    href="https://t.me/material_ka"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    // data-scroll="launch"
+                                >
                                     Подписаться на запуск
-                                </button>
+                                </a>
 
                             </div>
                         </div>
@@ -405,9 +411,14 @@ const scrollToTop = () => {
                             <h1 className="launch_title">
                                 Стань Первым, Кто Узнает О Запуске!
                             </h1>
-                            <button className="launch_button">
+                            <a
+                                className="launch_button"
+                                href="https://t.me/material_ka"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Подписаться на запуск
-                            </button>
+                            </a>
                             </div>
                         </div>
                         <div className="launch_item_image">

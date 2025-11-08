@@ -60,9 +60,14 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
         </nav>
-             <button className="header_button" type="button"  onClick={() => scrollToId("launch")}>
+             <a
+                className="header_button"
+                href="https://t.me/material_ka"
+                target="_blank"
+                rel="noopener noreferrer"
+             >
                 Подписаться на запуск
-             </button>
+             </a>
 
           </div>
 
@@ -100,9 +105,14 @@ const Header: React.FC = () => {
                   </li>
                 </ul>
               </nav>
-                <button className="mobile_menu_button_subscribe" type='button'   onClick={() => handleMobileScroll("launch")}>
+                <a
+                    className="mobile_menu_button_subscribe"
+                    href="https://t.me/material_ka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Подписаться на запуск
-                </button>
+                </a>
                 </div>
              
                 </div>
