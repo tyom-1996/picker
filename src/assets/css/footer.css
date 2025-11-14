@@ -170,7 +170,7 @@
          height: 42px!important;
     }
 }
-@media (min-width: 851px) and (max-width: 980px) {
+@media (min-width: 901px) and (max-width: 980px) {
     .footer_logo {
         max-width: 150px!important;
         height: 30px!important;
@@ -198,7 +198,7 @@
     text-decoration: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .mobile_footer_button {
         display: flex!important;
         border-radius: 14px;

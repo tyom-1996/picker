@@ -7,6 +7,7 @@ import HowWorksIcon1 from "../assets/icons/howWorksIcon1";
 import HowWorksIcon2 from "../assets/icons/howWorksIcon2";
 import HowWorksIcon3 from "../assets/icons/howWorksIcon3";
 import HowWorksIcon4 from "../assets/icons/howWorksIcon4";
+import HowWorksIcon5 from "../assets/icons/howWorksIcon5";
 import ArrowIcon from "../assets/icons/arrowIcon";
 import Footer from "../components/footer";
 
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
         {
             id: 2,
             icon: <HowWorksIcon2 />,
-            title: "Поиск дизайнеров —",
+            title: "⁠Поиск дизайнеров —",
             description: "создайте задачу, и получай отклик от специалистов",
         },
         {
@@ -53,14 +54,14 @@ const Home: React.FC = () => {
         },
         {
             id: 4,
-            icon: <HowWorksIcon4 />,
+            icon: <HowWorksIcon5 />,
             title: "Советы экспертов —",
             description: "онлайн-вебинары и обучающие программы для профессионалов в сфере дизайна интерьеров.",
         },
         {
-            id: 4,
+            id: 5,
             icon: <HowWorksIcon4 />,
-            title: "⁠Комплектация интерьеров —",
+            title: "Комплектация интерьеров —",
             description: "комплексное оформление и оснащение жилых и коммерческих помещений «под ключ», включая аутсорс-комплектацию для дизайнеров и дизайн‑студий.",
         }
     ]);
@@ -309,7 +310,7 @@ const scrollToTop = () => {
                                         {step.icon}
                                     </div>
                                     <p className="how_it_works_item_title">{step.title}</p>
-                                    <p className="how_it_works_detail_description">{selectedHow?.description}</p>
+                                    <p className="how_it_works_detail_description">{step.description}</p>
                                 </button>
                             ))}
                         </div>

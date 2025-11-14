@@ -165,7 +165,7 @@
          height: 42px!important;
     }
 }
-@media (min-width: 851px) and (max-width: 980px) {
+@media (min-width: 901px) and (max-width: 980px) {
     .header_logo {
         max-width: 150px!important;
         height: 30px!important;
@@ -190,7 +190,7 @@
 
 
 
-@media (max-width: 851px) {
+@media (max-width: 900px) {
     .header_wrapper {
         justify-content: center!important;
         position: relative;
@@ -307,7 +307,7 @@
 }
 
 
-@media (min-width: 480px) and (max-width: 850px) {
+@media (min-width: 480px) and (max-width: 900px) {
     .mobile_menu_button svg {
         width: 40px;
         height: 40px;
